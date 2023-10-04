@@ -13,8 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class CharacterDetailsComponent implements OnInit {
   character: any;
   characters: any[] = [];
-  currentPage = 1;
-  totalPages = 1;
+
 
   constructor(
     private rickAndMortyService: RickAndMortyService,
@@ -24,21 +23,51 @@ export class CharacterDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      const characterId = params.get('id');
+      
+      if (characterId !== null) {
+        this.rickAndMortyService.getCharacterById(characterId).subscribe((data) => {
+          this.character = data;
+          console.log(data)
+        });
+      } else {
+        // Karakter ID yoksa uygun bir hata işleme veya yönlendirme yapabilirsiniz.
+      }
+    });
+  }
+  
 
 
-    // ActivatedRoute'i kullanarak URL'den karakter ID'sini alın
-    const characterId = this.route.snapshot.paramMap.get('id');
-
-    if (characterId !== null) {
-      // Karakteri API'den alın
-      this.rickAndMortyService.getCharacterById(characterId).subscribe((data) => {
-        this.character = data;
-        console.log(data)
-      });
+  goToPreviousCharacter() {
+    // Mevcut karakterin ID'sini alın
+    const currentCharacterId = this.character.id;
+  
+    // Bir önceki karakterin ID'sini hesaplayın (örneğin, 1 çıkarın)
+    const previousCharacterId = currentCharacterId - 1;
+  
+    // Eğer önceki karakter ID'si 0'dan küçükse, ilk karaktere dönün
+    if (previousCharacterId < 1) {
+      this.router.navigate(['/character/1']);
     } else {
-      // characterId null ise uygun bir hata işleme veya yönlendirme yapabilirsiniz.
+      // Önceki karakterin sayfasına yönlendirin
+      this.router.navigate(['/character', previousCharacterId]);
     }
   }
-
   
+  
+  goToNextCharacter() {
+    // Mevcut karakterin ID'sini alın
+    const currentCharacterId = this.character.id;
+  
+    // Bir sonraki karakterin ID'sini hesaplayın (örneğin, 1 ekleyin)
+    const nextCharacterId = currentCharacterId + 1;
+  
+    // Sonraki karakterin sayfasına yönlendirin
+    this.router.navigate(['/character', nextCharacterId]);
+  }
+  
+
+
 }
+

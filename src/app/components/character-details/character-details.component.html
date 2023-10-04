@@ -1,6 +1,18 @@
 <div class="back-page " >
-    <div class="container d-flex align-items-center justify-content-center" style=" height: 100%;" >
+  <div>
+
+
+
+
+
+</div>
+
+    <div class="container d-flex align-items-center justify-content-center " style=" height: 100%;" >
+ <!-- Önceki karaktere gitmek için düğme -->
+ <p-button (click)="goToPreviousCharacter()" icon="pi pi-angle-left" styleClass="p-button-rounded p-button-danger p-button-text"></p-button>
+
         <div class="col-md-10 col-sm-8">
+           
             <!-- Column -->
             <div class="card">
                <img class="card-img-top" src="assets/detail-img.png" alt="Card image cap">
@@ -25,18 +37,15 @@
                         <div class="col-lg-4 col-md-4 m-t-20">
                             <h3 class="m-b-0 font-light">First seen in:</h3><small> {{ character.origin.name }}</small>
                         </div>
+
                         
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
-    </div>
+    <!-- Sonraki karaktere gitmek için düğme -->
+    <p-button (click)="goToNextCharacter()" icon="pi pi-angle-right" styleClass="p-button-rounded p-button-danger p-button-text"></p-button>
 
-
-
-
-
-
-  
-  
+</div>

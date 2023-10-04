@@ -10,7 +10,7 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -28,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     DropdownModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
