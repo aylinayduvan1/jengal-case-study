@@ -1,0 +1,40 @@
+.back-page{
+    background-color: rgb(48, 45, 60);
+
+}
+.card{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); 
+    position: relative;
+
+    .status-card{
+        position: absolute; 
+        top: 12px; 
+        right: 12px; 
+        background-color: rgb(173, 228, 79); 
+        border: 1px solid rgb(173, 228, 79);
+        -webkit-box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+        box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+        -webkit-transition: 0.2s ease-in;
+        -o-transition: 0.2s ease-in;
+        transition: 0.2s ease-in
+        ;        border-radius: 8px; 
+        text-align: center; 
+        width: 35%;
+        padding: 2px 5px;
+        color: white;
+    }
+    .btn{
+        background-color: rgb(173, 228, 79); 
+        border-color: rgb(173, 228, 79);
+    }
+}
+
+
+.btn-rounded.btn-md {
+    padding: 4px 35px;
+    font-size: 16px;
+}
+.btn-primary,
+.btn-primary.disabled {
+    
+}
