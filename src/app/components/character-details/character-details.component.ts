@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CharacterDetailsComponent implements OnInit {
   character: any;
-  characters: any[] = [];
 
 
   constructor(
@@ -24,15 +23,13 @@ export class CharacterDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      const characterId = params.get('id');
-      
+      const characterId = params.get('id');  
       if (characterId !== null) {
+        // Parametrede bir karakter ID'si varsa, bu ID ile karakter bilgisini alırız.
         this.rickAndMortyService.getCharacterById(characterId).subscribe((data) => {
           this.character = data;
-          console.log(data)
+          // console.log(data)
         });
-      } else {
-        // Karakter ID yoksa uygun bir hata işleme veya yönlendirme yapabilirsiniz.
       }
     });
   }
@@ -60,7 +57,7 @@ export class CharacterDetailsComponent implements OnInit {
     // Mevcut karakterin ID'sini alın
     const currentCharacterId = this.character.id;
   
-    // Bir sonraki karakterin ID'sini hesaplayın (örneğin, 1 ekleyin)
+    // Bir sonraki karakterin ID'sini hesaplayın
     const nextCharacterId = currentCharacterId + 1;
   
     // Sonraki karakterin sayfasına yönlendirin

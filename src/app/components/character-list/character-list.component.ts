@@ -22,27 +22,36 @@ export class CharacterListComponent implements OnInit {
 
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
+
   ngOnInit(): void {
-    this.rickAndMortyService.getCharacters().subscribe((data) => {
-     
-      
+    // rickAndMortyService üzerinden karakterleri getirir ve veriyi subscribe ile dinler.
+    this.rickAndMortyService.getCharacters().subscribe((data) => {  
       this.characters = data.results;
       this.filteredCharacters = [...this.characters];
     });
   }
   
-  applyFiltersAndSort(): void {
-    this.filteredCharacters = this.characters.filter((character) => {
-      return (
-        character.name.toLowerCase().includes(this.filterName.toLowerCase()) &&
-        character.species.toLowerCase().includes(this.filterSpecies.toLowerCase()) &&
 
-        (this.filterStatus === '' || character.status === this.filterStatus) &&
-        (this.filterGender === '' || character.gender === this.filterGender)
-      );
+
+  // Bu fonksiyon, karakterleri filtrelemek ve sıralamak için kullanılır.
+  applyFiltersAndSort(): void {
+  
+    // this.filteredCharacters, filtrelenmiş karakterlerin listesini tutar.
+    this.filteredCharacters = this.characters.filter((character) => {
+      // Aşağıdaki koşullar, karakterin filtrelenip filtrelenmeyeceğini kontrol eder:
+      const nameMatches = character.name.toLowerCase().includes(this.filterName.toLowerCase()) || this.filterName === '';
+      const speciesMatches = character.species.toLowerCase().includes(this.filterSpecies.toLowerCase()) || this.filterSpecies === '';
+      const statusMatches = this.filterStatus === '' || character.status === this.filterStatus;
+      const genderMatches = this.filterGender === '' || character.gender === this.filterGender;
+  
+      // Tüm koşulların sağlandığı karakterleri filteredCharacters listesine ekler.
+      return nameMatches && speciesMatches && statusMatches && genderMatches;
     });
-    // Sorting logic here based on user's choice (e.g., name, species, status)
   }
+  
+
+
+  //açılan droplar için
 
   genderOptions: SelectItem[] = [
     { label: 'All Gender', value: '' },
@@ -58,11 +67,7 @@ export class CharacterListComponent implements OnInit {
     { label: 'Unknown', value: 'unknown' }
   ];
 
-
-
-
-
-  }
+}
   
 
 
