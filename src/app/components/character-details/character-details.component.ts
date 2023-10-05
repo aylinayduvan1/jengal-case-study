@@ -69,5 +69,59 @@ export class CharacterDetailsComponent implements OnInit {
   
 
 
+  //api sayfalandrıma dökümanına baktığımda prev ve next ile olduğunu gördüm.
+  //next ve prev kullanım denemem
+  // prevCharacterUrl: string | null = null;
+  // nextCharacterUrl: string | null = null;
+  // currentCharacterId: number = 0;
+
+
+  // ngOnInit(): void {
+  //   this.route.paramMap.subscribe((params) => {
+  //     const characterId = params.get('id');
+
+  //     if (characterId !== null) {
+  //       this.rickAndMortyService
+  //         .getCharacterById(characterId)
+  //         .subscribe((data) => {
+  //           console.log(data)
+  //           this.character = data;
+  //           this.nextCharacterUrl = data.info.next;
+  //           this.prevCharacterUrl = data.info.prev;
+  //           console.log(data.info.prev)
+  //         });
+  //     } else {
+  //       // Karakter ID yoksa uygun bir hata işleme veya yönlendirme yapabilirsiniz.
+  //     }
+  //   });
+  // }
+
+  // goToNextCharacter() {
+  //   if (this.nextCharacterUrl) {
+  //     this.rickAndMortyService
+  //       .getNextCharacter(this.nextCharacterUrl)
+  //       .subscribe((data) => {
+  //         console.log(data)
+
+  //         this.character = data;
+  //         this.nextCharacterUrl = data.info.next;
+  //         this.prevCharacterUrl = data.info.prev;
+  //         console.log(this.nextCharacterUrl)
+  //       });
+  //   }
+  // }
+
+  // goToPreviousCharacter() {
+  //   if (this.prevCharacterUrl) {
+  //     this.rickAndMortyService
+  //       .getPreviousCharacter(this.prevCharacterUrl)
+  //       .subscribe((data) => {
+  //         this.character = data;
+  //         this.nextCharacterUrl = data.info.next;
+  //         this.prevCharacterUrl = data.info.prev;
+  //       });
+  //   }
+  // }
+
 }
 

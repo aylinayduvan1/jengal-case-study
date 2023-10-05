@@ -21,7 +21,21 @@ export class RickAndMortyService {
 
 
 
-  // ...
+  // next ve prev için deneme
+  
+  // getCharacterById(id: string): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}character/${id}`);
+
+  // }
+  
+  // getNextCharacter(url: string): Observable<any> {
+  //   return this.http.get(url);
+  // }
+
+  // getPreviousCharacter(url: string): Observable<any> {
+  //   return this.http.get(url);
+  // }
+
 
  
  
