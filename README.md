@@ -1,27 +1,26 @@
 # JengalCaseStudy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
 
-## Development server
+Bu proje, Rick and Morty API'sini kullanarak bir web uygulaması geliştirmeyi amaçlamaktadır. Proje, Angular kullanılarak oluşturulmuş olup, aşağıdaki sayfaları içermektedir:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Ana Sayfa: Bu sayfa, başlangıç sayfasıdır.
 
-## Code scaffolding
+2. Karakterler Sayfası: Bu sayfa, API'den alınan karakter verilerini listeleyen bir sayfadır. Karekter listesinde filtreleme ve arama yapılabilmektedir.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Karakter Detay Sayfası: Kullanıcı bu sayfada bir karakteri tıkladığında, seçilen karakterin detaylarını görmek için ayrıntılı bilgilere yönlendirilir.
 
-## Build
+Proje ayrıca sayfalar arası geçişlerin yönetimini sağlayacak özel yöntemler içermektedir.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Kullanılan Teknolojiler
 
-## Running end-to-end tests
+Bu proje aşağıdaki teknolojileri kullanmaktadır:
+- Angular, Bootstrap, Primeng
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Proje hakkında daha fazla bilgi almak için lütfen ilgili kodları inceleyin ve GitHub deposunu ziyaret edin.
 
-## Further help
+![image](https://github.com/aylinayduvan1/jengal-case-study/assets/98785023/b672ce50-9636-4ac6-b91a-677f13d0e477)
+![image](https://github.com/aylinayduvan1/jengal-case-study/assets/98785023/1f842d13-d526-4aea-928a-82d5593346d0)
+![image](https://github.com/aylinayduvan1/jengal-case-study/assets/98785023/6a04bb57-44eb-4069-aaba-ec3dd03019c9)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
