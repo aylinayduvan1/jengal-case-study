@@ -1,0 +1,49 @@
+$background-color_1: rgb(48, 45, 60);
+.container-fulid{
+   height: 100vh;
+   background-color: $background-color_1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: white;
+   
+}
+
+$color_1: white;
+$background-color_1: rgb(48, 45, 60);
+$background-color_2: rgb(173, 228, 79);
+$border-color_1: rgb(173, 228, 79);
+
+.back-page {
+  background-color: $background-color_1;
+
+  .card {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    position: relative;
+
+    .status-card {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background-color: $background-color_2;
+      border: 1px solid $border-color_1;
+      box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+      transition: 0.2s ease-in;
+      border-radius: 8px;
+      text-align: center;
+      width: 35%;
+      padding: 2px 5px;
+      color: $color_1;
+    }
+  }
+}
+
+.btn {
+  background-color: $background-color_2;
+  border-color: $border-color_1;
+  &.btn-rounded.btn-md {
+    padding: 4px 35px;
+    font-size: 16px;
+  }
+}

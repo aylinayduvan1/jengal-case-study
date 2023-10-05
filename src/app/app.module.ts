@@ -11,6 +11,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -19,6 +20,7 @@ import { ButtonModule } from 'primeng/button';
     AppComponent,
     CharacterListComponent,
     CharacterDetailsComponent,
+    HomePageComponent,
     
   ],
   imports: [

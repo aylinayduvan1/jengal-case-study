@@ -11,6 +11,8 @@ $border-color_1: #d7dfe3;
 
   .card {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    position: relative;
+
 
     .status {
       background-color: $background-color_3;
@@ -24,6 +26,13 @@ $border-color_1: #d7dfe3;
       gap: 20px;
       align-items: center;
       justify-content: center;
+    }
+    .card-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px; 
+      border-radius: 5px; 
     }
   }
 }
@@ -147,3 +156,9 @@ p {
     height: 200px;
   }
 }
+
+
+
+
+
+
