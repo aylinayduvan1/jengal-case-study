@@ -1,79 +1,67 @@
-
 <div class="back-page">
     <div class="container-fulid py-3  d-flex alings-items-center justify-content-center" >
       <div class="col-md-4 col-sm-12" >
         <img src="assets/morty-logo.png" alt="" width="100%">
       </div>  
     </div>
-  
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6 g-3">
-        <div class="dropdown-container w-100" style="background-color: antiquewhite;">
-          <p-dropdown [options]="genderOptions" [(ngModel)]="filterGender" (onChange)="applyFiltersAndSort() " [style]="{'width': '100%'}"></p-dropdown>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 g-3">
+          <div class="dropdown-container w-100" style="background-color: antiquewhite;">
+            <p-dropdown [options]="genderOptions" [(ngModel)]="filterGender" (onChange)="applyFiltersAndSort() " [style]="{'width': '100%'}"></p-dropdown>
+
+          </div>
+          
+        </div>
+    
+        <div class="col-md-3 col-sm-6 g-3">
+          <span class="p-input-icon-left" style="width: 100%;">
+            <i class="pi pi-search"></i>
+            <input type="text" id="nameFilter" [(ngModel)]="filterName" (input)="applyFiltersAndSort()"  pInputText placeholder="Name" class="w-100" style="width: 100%;" />
+          </span>
         </div>
         
-      </div>
-  
-      <div class="col-md-3 col-sm-6 g-3">
-        <span class="p-input-icon-left" style="width: 100%;">
-          <i class="pi pi-search"></i>
-          <input type="text" id="nameFilter" [(ngModel)]="filterName" (input)="applyFiltersAndSort()"  pInputText placeholder="Name" class="w-100" style="width: 100%;" />
-        </span>
-      </div>
-      
-      <div class="col-md-3 col-sm-6 g-3">
-        <span class="p-input-icon-left" style="width: 100%;">
-          <i class="pi pi-search"></i>
-          <input type="text" id="speciesFilter" [(ngModel)]="filterSpecies" (input)="applyFiltersAndSort()"  pInputText placeholder="Species" class="w-100" style="width: 100%;" />
-        </span>
-      </div>
-      
-  
-      <div class="col-md-3 col-sm-6 g-3">
-        <div class="dropdown-container w-100" style="background-color: antiquewhite;">
-          <p-dropdown [options]="statusOptions" [(ngModel)]="filterStatus" (onChange)="applyFiltersAndSort()" [style]="{'width': '100%'}"></p-dropdown>
-
-         
+        <div class="col-md-3 col-sm-6 g-3">
+          <span class="p-input-icon-left" style="width: 100%;">
+            <i class="pi pi-search"></i>
+            <input type="text" id="speciesFilter" [(ngModel)]="filterSpecies" (input)="applyFiltersAndSort()"  pInputText placeholder="Species" class="w-100" style="width: 100%;" />
+          </span>
+        </div>
+        
+    
+        <div class="col-md-3 col-sm-6 g-3">
+          <div class="dropdown-container w-100" style="background-color: antiquewhite;">
+            <p-dropdown [options]="statusOptions" [(ngModel)]="filterStatus" (onChange)="applyFiltersAndSort()" [style]="{'width': '100%'}"></p-dropdown>
+        </div>
       </div>
     </div>
-  </div>
     
-    <div class="container pb-5">
-      <div class="row row-cols-1  row-cols-lg-5 row-cols-md-3 cols-sm-12  g-4 mt-2">
-        <div class="col" *ngFor="let character of filteredCharacters">
-          <div class="card py-2 px-2 ">
-              <img src="{{ character.image }}" class="card-img-top" alt="...">
-                <p class="card-text  m-t-10 status-card" >
-                  {{ character.status }}  
-                </p>
+        <div class="container pb-5">
+          <div class="row row-cols-1  row-cols-lg-5 row-cols-md-3 cols-sm-12  g-4 mt-2">
+              <div class="col" *ngFor="let character of filteredCharacters">
+                <div class="card py-2 px-2 ">
+                  <img src="{{ character.image }}" class="card-img-top" alt="...">
+                  
+                    <p class="card-text  m-t-10 status-card" >
+                      {{ character.status }}  
+                    </p>
 
-              <div class="card-body">
-                <h6 class="card-title">    
-                   {{ character.name }}
-                </h6>
-               
-                <p class="card-text">
-                Gender:  {{ character.gender}}
-                  
-                </p>
-                <p class="card-text">
-                Species  {{ character.species }}
-                  
-                </p>
-  
-                <button [routerLink]="['/character', character.id]" class="btn btn-secondary w-100"  type="button">For Detail</button>
+                    <div class="card-body">
+                      <h6 class="card-title"> {{ character.name }}</h6>
+
+                      <p class="card-text"> Gender:  {{ character.gender}}</p>
+
+                      <p class="card-text"> Species  {{ character.species }}</p>
+        
+                      <button [routerLink]="['/character', character.id]" class="btn btn-secondary w-100"  type="button">For Detail</button>
+                    </div>
+                </div>
               </div>
-            </div>
           </div>
+        </div>
     </div>
-    
-  </div>
+</div>
 
-  <div class="filter-controls">
-  </div>
-  
   
   
